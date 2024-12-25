@@ -1,0 +1,126 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+    transition: background 1s ease;
+    box-sizing: border-box;
+}
+
+.greeting-container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.greeting-container h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: pulse 3s infinite;
+}
+
+.greeting-container p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.greeting-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.greeting-container button:hover {
+    background-color: #ff577e;
+    transform: scale(1.1);
+}
+
+/* Snowflake Styling */
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Mobile Responsiveness with Media Queries */
+@media screen and (max-width: 768px) {
+    .greeting-container h1 {
+        font-size: 2rem;
+    }
+
+    .greeting-container p {
+        font-size: 1.2rem;
+    }
+
+    .greeting-container button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    /* Snowflakes */
+    .snowflake {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    }
+
+    .greeting-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .greeting-container p {
+        font-size: 1rem;
+    }
+
+    .greeting-container button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .snowflake {
+        font-size: 1.2rem;
+    }
+}
